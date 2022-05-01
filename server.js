@@ -17,21 +17,31 @@ if (process.env.NODE_ENV !== 'Production') {
 // production
 
 // db
+// import db from './db/connect.js'
 
 // routes
+import authRouter from './routes/authRoute.js'
 
 // middlewares
+import notFoundMiddleware from './middleware/not-found.js'
+import errorHandlerMiddeware from './middleware/error-handler.js'
 
 // test
 app.get('/', (req, res) => {
     res.send('Welcome!')
 })
 
+app.use('/api/v1/auth', authRouter)
+
+app.use(notFoundMiddleware)
+app.use(errorHandlerMiddeware)
+
 // server
 const PORT = process.env.PORT || 5500
 const start = async () => {
     try {
-        await connectDB(process.env.MONGO_URL)
+        // const result = await db.query('select * from test')
+        // console.table(result[0])
         app.listen(PORT, () => {
             console.log(`Server is listening on port ${PORT}...`);
         })
