@@ -7,6 +7,9 @@ const Wrapper = styled.section`
     display: block;
     margin: 0 auto;
     margin-bottom: 1.38rem;
+    width: 20rem;
+    height: 20rem;
+    border: 5px solid #555273;
   }
   .form {
     max-width: 400px;
@@ -15,6 +18,7 @@ const Wrapper = styled.section`
 
   h3 {
     text-align: center;
+    margin-bottom: 0;
   }
   p {
     margin: 0;

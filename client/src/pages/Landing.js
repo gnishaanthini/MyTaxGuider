@@ -11,10 +11,10 @@ const Landing = () => {
                 <div className='info'>
                     <Logo className='logo'/>
                     <h1>
-                        job <span>tracking</span> app
+                        tax <span>guider</span> app
                     </h1>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum ad repellendus quasi modi aliquid. Quae veritatis asperiores at dolorum, quidem quod dicta ipsam, quia consequatur provident, vero maxime voluptatem doloribus!</p>
-                    <Link to='/register' className='btn btn-hero'>Login/Register</Link>
+                    <Link to='/register' className='btn btn-hero btn-wrapper'>Login/Register</Link>
                 </div>
                 <img src={main} alt='job hunt' className='img main-img'/>
             </div>
