@@ -7,7 +7,7 @@ import TaxAssessmentVat from './pages/taxAssessmentVat.js';
 import Navbar from './components/Navbar';
 import IncomeTaxReport from './pages/incometaxReport';
 import VatTaxReport from './pages/vattaxReport';
-import ExportPdfComponent from './pages/reportGenerator';
+// import ExportPdfComponent from './pages/reportGenerator';
 
 
 function App() {

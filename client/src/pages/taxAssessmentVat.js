@@ -44,7 +44,7 @@ function TaxAssessmentVat(props) {
 
         let path = '/vattaxreport'; 
         navigate(path);
-        alert(`The name you entered was: ${name}`);
+        // alert(`The name you entered was: ${name}`);
         props.handleSubmit(name, nic, registration,price,year,tin);
         event.preventDefault();
     }

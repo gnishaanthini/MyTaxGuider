@@ -97,7 +97,7 @@ function TaxAssessmentIncome(props) {
       
       
 
-    alert(`The name you entered was: ${tax.name}`);
+    // alert(`The name you entered was: ${tax.name}`);
     props.handleSubmit(name, nic, source, paysheet, income, year, tin);
     event.preventDefault();
 }

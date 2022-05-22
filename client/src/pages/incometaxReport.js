@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table';
 // import * as ReactDOMServer from 'react-dom/server';
 import { Form, Button, InputGroup, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import './style.css';
-import ReactToPrint from 'react-to-print';
+// import ReactToPrint from 'react-to-print';
 
 
 function IncomeTaxReport(props) {
