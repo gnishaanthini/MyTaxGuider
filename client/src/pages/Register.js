@@ -1,21 +1,27 @@
 import { useState, useEffect } from 'react'
 import { FormRow, Logo, Alert } from '../components'
 import { useAppContext } from '../context/appContext'
+import { useNavigate } from 'react-router-dom'
 import Wrapper from '../assets/wrappers/RegisterPage'
 
 const initialState = {
     username: '',
     password: '',
+    userType: 'Customer',
     isMember: true,
 }
 
 const Register = () => {
+    const navigate = useNavigate()
     const [values, setValues] = useState(initialState)
     const {
+        user,
         isLoading,
-        showAlert
+        showAlert,
+        displayAlert,
+        registerUser
     } = useAppContext()
-    
+
     const handleChange = (e) => {
         setValues({ ...values, [e.target.name]: e.target.value })
     }
@@ -26,7 +32,26 @@ const Register = () => {
 
     const onSubmit = (e) => {
         e.preventDefault()
+        const { username, password, userType, isMember } = values
+        if(!username || !password) {
+            displayAlert()
+            return
+        }
+        const currentUser = { username, password, userType }
+        if (isMember) {
+            // loginUser(currentUser)
+        } else {
+            registerUser(currentUser)
+        }
     }
+
+    useEffect(() => {
+        if (user) {
+            setTimeout(() => {
+                navigate('/')
+            }, 3000)
+        }
+    }, [user, navigate])
 
     return (
         <Wrapper className='full-page'>
@@ -36,21 +61,11 @@ const Register = () => {
 
                 {showAlert && <Alert />}
 
-                {/* name input */}
-                {
-                    !values.isMember && <FormRow
-                        type='text'
-                        name='name'
-                        value={values.name}
-                        handleChange={handleChange}
-                    />
-                }
-
                 {/* email input */}
                 <FormRow
-                    type='email'
-                    name='email'
-                    value={values.email}
+                    type='username'
+                    name='username'
+                    value={values.username}
                     handleChange={handleChange}
                 />
 
