@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { FormRow, Logo, Alert } from '../components'
-import { useAppContext } from '../context/appContext'
+import { useAppContext } from '../context/AppContext'
 import Wrapper from '../assets/wrappers/RegisterPage'
+import { useNavigate } from "react-router-dom";
 
 const initialState = {
     username: '',
@@ -10,6 +11,7 @@ const initialState = {
 }
 
 const Register = () => {
+    const navigate = useNavigate();
     const [values, setValues] = useState(initialState)
     const {
         isLoading,
@@ -25,6 +27,8 @@ const Register = () => {
     }
 
     const onSubmit = (e) => {
+        let path = '/home'; 
+        navigate(path);
         e.preventDefault()
     }
 
