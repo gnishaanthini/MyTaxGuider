@@ -6,14 +6,17 @@ import { SidebarData } from './SideBarData';
 import './Navbar.css';
 import SubMenu from "./SubMenu";
 import { IconContext } from 'react-icons';
+import Wrapper from '../assets/wrappers/Navbar'
+import { useAppContext } from '../context/appContext'
 
 function Navbar() {
+  const { logoutUser } = useAppContext()
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
 
   return (
-    <>
+    <Wrapper>
       <IconContext.Provider value={{ color: '#fff' }}>
         <div className='navbar'>
        
@@ -26,6 +29,10 @@ function Navbar() {
           >
             My Tax Guider
           </h1>
+          <button type='button' className='logout-btn' onClick={logoutUser}>
+            <FaIcons.FaUserCircle className='logout-ico'/>
+                logout
+          </button>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' onClick={showSidebar}>
@@ -50,7 +57,7 @@ function Navbar() {
           </ul>
         </nav>
       </IconContext.Provider>
-    </>
+    </Wrapper>
   );
 }
 

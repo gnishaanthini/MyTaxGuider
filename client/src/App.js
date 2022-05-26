@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Error, Landing, Register } from './pages/'
+import { Error, Landing, Register, ProtectedRoute } from './pages/'
 import React, { useState, setState } from 'react';
 
 import TaxAssessmentIncome from './pages/taxAssessmentIncome.js';
@@ -44,12 +44,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path='/taxAssessmentIncome' element={<ProtectedRoute><TaxAssessmentIncome handleSubmit={addIncomeTax}/></ProtectedRoute>}></Route>
+          <Route path='/taxAssessmentVat' element={<ProtectedRoute>< TaxAssessmentVat handleSubmit={addVatTax}/></ProtectedRoute>}></Route>
+          <Route path='/incometaxreport' element={<ProtectedRoute>< IncomeTaxReport data={incometax}/></ProtectedRoute>}></Route>
+          <Route path='/vattaxreport' element={<ProtectedRoute>< VatTaxReport data={vattax}/></ProtectedRoute>}></Route>
           <Route path="*" element={<Error />} />
-          <Route path="/home" element={<Home />} />
-          <Route path='/taxAssessmentIncome' element={<TaxAssessmentIncome handleSubmit={addIncomeTax}/>}></Route>
-          <Route path='/taxAssessmentVat' element={< TaxAssessmentVat handleSubmit={addVatTax}/>}></Route>
-          <Route path='/incometaxreport' element={< IncomeTaxReport data={incometax}/>}></Route>
-          <Route path='/vattaxreport' element={< VatTaxReport data={vattax}/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
