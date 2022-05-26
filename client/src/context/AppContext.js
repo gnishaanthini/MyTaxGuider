@@ -136,6 +136,7 @@ const AppProvider = ({children}) => {
             displayAlert,
             clearAlert,
             registerUser,
+            loginUser,
             logoutUser
         }}>
         {children}

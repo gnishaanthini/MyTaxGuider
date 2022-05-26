@@ -19,7 +19,8 @@ const Register = () => {
         isLoading,
         showAlert,
         displayAlert,
-        registerUser
+        registerUser,
+        loginUser
     } = useAppContext()
 
     const handleChange = (e) => {
@@ -39,7 +40,7 @@ const Register = () => {
         }
         const currentUser = { username, password, userType }
         if (isMember) {
-            // loginUser(currentUser)
+            loginUser(currentUser)
         } else {
             registerUser(currentUser)
         }
