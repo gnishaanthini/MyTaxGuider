@@ -170,7 +170,7 @@ return (
         <Form.Group>
           <Form.Label>Total Income</Form.Label>
 
-          <Form.Control type="text" id="income" value={income} onChange={(e) => handleInputChange(e)} placeholder="Total Income Value" />
+          <Form.Control type="text" id="income" value={income} onChange={(e) => handleInputChange(e)} placeholder="Total Annual Income Value" />
 
         </Form.Group>
         <br></br>

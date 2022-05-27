@@ -7,6 +7,25 @@ import Navbar from '../components/Navbar';
 
 function VatTaxReport(props) {
     const arr = props.data;
+    var percentage=0;
+
+    function calculateVATPercentage(){
+        if(arr.type=="Financial service"){
+            percentage=15;
+        }
+        else{
+            percentage=8;
+        }
+        return percentage;
+    }
+
+    function calculateVATtax(){
+        var income=0;
+        income=(parseInt(arr.price)*percentage)/100
+        return income;
+
+    }
+
     return (
         <div>
              <Navbar/>
@@ -54,16 +73,25 @@ function VatTaxReport(props) {
                 </InputGroup>
                 <br></br>
                 <InputGroup className="mb-3">
-                    <InputGroup.Text id="inputGroup-sizing-default">Value of the good/service</InputGroup.Text>
-                    <FormControl  type="text" id="price" value={arr.price}
+                    <InputGroup.Text id="inputGroup-sizing-default">Type of the good/service</InputGroup.Text>
+                    <FormControl  type="text" id="type" value={arr.type}
                         aria-label="Default"
                         aria-describedby="inputGroup-sizing-default"
                     />
                 </InputGroup>
                 <br></br>
                 <InputGroup className="mb-3">
+                    <InputGroup.Text id="inputGroup-sizing-default">Value of the good/service (per annum)</InputGroup.Text>
+                    <FormControl  type="text" id="price" value={arr.price}
+                        aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default"
+                    />
+                </InputGroup>
+                <br></br>
+                
+                <InputGroup className="mb-3">
                     <InputGroup.Text id="inputGroup-sizing-default">Calculated Tax Percentage</InputGroup.Text>
-                    <FormControl  type="text" id="percentage" 
+                    <FormControl  type="text" id="percentage" value={calculateVATPercentage()}
                         aria-label="Default"
                         aria-describedby="inputGroup-sizing-default"
                     />
@@ -71,7 +99,7 @@ function VatTaxReport(props) {
                 <br></br>
                 <InputGroup className="mb-3">
                     <InputGroup.Text id="inputGroup-sizing-default">Assessed VAT Tax Value</InputGroup.Text>
-                    <FormControl  type="text" id="taxvalue" 
+                    <FormControl  type="text" id="taxvalue" value={calculateVATtax()}
                         aria-label="Default"
                         aria-describedby="inputGroup-sizing-default"
                     />

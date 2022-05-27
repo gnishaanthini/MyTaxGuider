@@ -10,6 +10,29 @@ import Navbar from '../components/Navbar';
 
 function IncomeTaxReport(props) {
     const arr = props.data;
+    var percentage=0;
+
+
+    function calculatePercentage(){
+        if (parseInt(arr.income)<3000000){
+            percentage=6;
+        }
+        else if (parseInt(arr.income)<6000000){
+            percentage=12;
+        }
+        else{
+            percentage=18;
+        }
+        return percentage;
+    }
+
+    function calculateTax(){
+        var income=0;
+
+        income=(parseInt(arr.income)*percentage)/100
+        return income;
+
+    }
 
     return (
         <div>
@@ -75,7 +98,7 @@ function IncomeTaxReport(props) {
                 <br></br>
                 <InputGroup className="mb-3">
                     <InputGroup.Text id="inputGroup-sizing-default">Calculated Tax Percentage</InputGroup.Text>
-                    <FormControl type="text" id="percentage"
+                    <FormControl type="text" id="percentage" value={calculatePercentage()}
                         aria-label="Default"
                         aria-describedby="inputGroup-sizing-default"
                     />
@@ -83,7 +106,7 @@ function IncomeTaxReport(props) {
                 <br></br>
                 <InputGroup className="mb-3">
                     <InputGroup.Text id="inputGroup-sizing-default">Assessed Income Tax Value</InputGroup.Text>
-                    <FormControl type="text" id="taxvalue"
+                    <FormControl type="text" id="taxvalue" value={calculateTax()}
                         aria-label="Default"
                         aria-describedby="inputGroup-sizing-default"
                     />

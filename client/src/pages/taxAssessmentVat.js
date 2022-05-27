@@ -12,6 +12,7 @@ function TaxAssessmentVat(props) {
     const [price, setPrice] = useState(null);
     const [year, setYear] = useState(null);
     const [tin, setTin] = useState(null);
+    const [type, setType] = useState(null);
 
     const navigate = useNavigate();
 
@@ -37,16 +38,19 @@ function TaxAssessmentVat(props) {
         if (id === "tin") {
             setTin(value);
         }
+        if (id === "type") {
+          setType(value);
+      }
     }
 
     function handleSubmit(event) {
 
-        console.log(name, nic, registration,price,year,tin);
+        console.log(name, nic, registration,price,year,tin,type);
 
         let path = '/vattaxreport'; 
         navigate(path);
         // alert(`The name you entered was: ${name}`);
-        props.handleSubmit(name, nic, registration,price,year,tin);
+        props.handleSubmit(name, nic, registration,price,year,tin,type);
         event.preventDefault();
     }
 
@@ -103,7 +107,21 @@ function TaxAssessmentVat(props) {
           </Form.Group>
           <br></br>
           <Form.Group>
-            <Form.Label>Value of the good/service</Form.Label>
+          <Form.Label>Type of goods/service</Form.Label>
+
+          <Form.Select aria-label="Default select example" id="type" value={type} onChange={(e) => handleInputChange(e)} placeholder="Type of goods/service">
+            <option value={"default"} >Choose an Option</option>
+
+            <option value="Manufacture">Manufacting of goods</option>
+            <option value="Import">Import of goods</option>
+            <option value="Supply">Supply of goods</option>
+            <option value="Financial service">Financial Services</option>
+            <option value="Other">Other</option>
+          </Form.Select>
+        </Form.Group>
+        <br></br>
+          <Form.Group>
+            <Form.Label>Value of the good/service (per annum)</Form.Label>
 
             <Form.Control type="text" id="price" value={price} onChange={(e) => handleInputChange(e)} placeholder="Value of the good/service"  />
 

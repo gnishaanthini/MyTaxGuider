@@ -26,14 +26,15 @@ function App() {
 
   const [vattax, setVatTax] = useState({});
 
-  const addVatTax = (name, nic, registration,price,year,tin) => {
+  const addVatTax = (name, nic, registration,price,year,tin,type) => {
     setVatTax({
       name: name,
       nic: nic,
       registration:registration,
       price:price,
       year: year,
-      tin: tin
+      tin: tin,
+      type:type
     })
   }
 
