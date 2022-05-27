@@ -1,0 +1,13 @@
+import { Navigate } from "react-router-dom"
+import { useAppContext } from "../../context/appContext"
+
+const IsAdmin = ({children}) => {
+    const { user } = useAppContext()
+
+    if (!user || user.userType!=='Admin') {
+        return <Navigate to='/home' />
+    }
+    return children
+}
+
+export default IsAdmin
