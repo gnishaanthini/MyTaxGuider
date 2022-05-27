@@ -7,6 +7,8 @@ import bcrypt from 'bcryptjs'
 const register = async (req, res, next) => {
     // console.log(req.user.userId)
 
+    /** COMMENT START TO END OF CHECK IF ADMIN TO CREATE FIRST ADMIN */
+    /* start check if admin */ 
     if (!req.user.userId) {
         throw new UnAuthenticatedError('you are not authorized')
     }
@@ -23,6 +25,8 @@ const register = async (req, res, next) => {
     if (admin.userType!=='Admin') {
         throw new UnAuthenticatedError('you are not authorized')
     }
+
+    /* end check if admin */ 
 
     const { username, password, userType } = req.body
     if (!username || !password || !userType) {
