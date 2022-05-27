@@ -1,6 +1,6 @@
-CREATE TABLE Users(
-    username VARCHAR(20) NOT NULL,
-    password VARCHAR(100) NOT NULL,
-    userType ENUM ('Customer', 'Employee', 'Admin') NOT NULL DEFAULT 'Customer',
-    PRIMARY KEY (username, password)
+CREATE TABLE Users (
+	id int AUTO_INCREMENT PRIMARY KEY,
+    username varchar(20) NOT null,
+    password varchar(100) NOT null,
+    userType enum('Customer', 'Employee', 'Admin') NOT null DEFAULT 'Customer'
 );
