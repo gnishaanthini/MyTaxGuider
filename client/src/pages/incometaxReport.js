@@ -10,34 +10,39 @@ import Navbar from '../components/Navbar';
 
 function IncomeTaxReport(props) {
     const arr = props.data;
-    var percentage=0;
+    var percentage = 0;
 
 
-    function calculatePercentage(){
-        if (parseInt(arr.income)<3000000){
-            percentage=6;
+    function calculatePercentage() {
+        if (parseInt(arr.income) < 3000000) {
+            percentage = 6;
         }
-        else if (parseInt(arr.income)<6000000){
-            percentage=12;
+        else if (parseInt(arr.income) < 6000000) {
+            percentage = 12;
         }
-        else{
-            percentage=18;
+        else {
+            percentage = 18;
         }
         return percentage;
     }
 
-    function calculateTax(){
-        var income=0;
+    function calculateTax() {
+        var income = 0;
 
-        income=(parseInt(arr.income)*percentage)/100
+        income = (parseInt(arr.income) * percentage) / 100
         return income;
 
     }
 
     return (
         <div>
-             <Navbar/>
-            <h1>Income Tax Report</h1>
+            <Navbar />
+            <h1 style={{
+                position: 'absolute',
+                left: '35%'
+            }}>Income Tax Report</h1>
+            <br></br>
+            <br></br>
             <div className='form'><Form>
                 <InputGroup className="mb-3">
                     <InputGroup.Text id="inputGroup-sizing-default">Name</InputGroup.Text>
@@ -115,7 +120,7 @@ function IncomeTaxReport(props) {
 
             </Form></div>
 
-            
+
 
 
 
