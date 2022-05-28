@@ -101,6 +101,54 @@ const AppProvider = ({children}) => {
         clearAlert()
     }
 
+    const registerAdmin = async (currentUser) => {
+        dispatch({ type: REGISTER_USER_BEGIN })
+
+        try {
+            const response = await authFetch.post('/admin/register', currentUser)
+            const { user, token } = response.data
+            dispatch({ type: REGISTER_USER_SUCCESS, payload: {
+                user,
+                token
+            } })
+            // local storage
+            addUserToLocalStorage({
+                user,
+                token
+            })
+        } catch (error) {
+            dispatch({ type: REGISTER_USER_ERROR, payload: {
+                msg: error.response.data.msg
+            } })
+        }
+
+        clearAlert()
+    }
+
+    const registerEmployee = async (currentUser) => {
+        dispatch({ type: REGISTER_USER_BEGIN })
+
+        try {
+            const response = await authFetch.post('/emp/register', currentUser)
+            const { user, token } = response.data
+            dispatch({ type: REGISTER_USER_SUCCESS, payload: {
+                user,
+                token
+            } })
+            // local storage
+            addUserToLocalStorage({
+                user,
+                token
+            })
+        } catch (error) {
+            dispatch({ type: REGISTER_USER_ERROR, payload: {
+                msg: error.response.data.msg
+            } })
+        }
+
+        clearAlert()
+    }
+
     const loginUser = async (currentUser) => {
         dispatch({ type: LOGIN_USER_BEGIN })
 
@@ -137,7 +185,9 @@ const AppProvider = ({children}) => {
             clearAlert,
             registerUser,
             loginUser,
-            logoutUser
+            logoutUser,
+            registerAdmin,
+            registerEmployee
         }}>
         {children}
     </AppContext.Provider>

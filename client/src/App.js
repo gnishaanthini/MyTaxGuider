@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Error, Landing, Register, ProtectedRoute } from './pages/'
+import { AdminLogin, CreateEmployee, IsAdmin } from './pages/admin/'
 import React, { useState, setState } from 'react';
 
 import TaxAssessmentIncome from './pages/taxAssessmentIncome.js';
@@ -50,6 +51,8 @@ function App() {
           <Route path='/taxAssessmentVat' element={<ProtectedRoute>< TaxAssessmentVat handleSubmit={addVatTax}/></ProtectedRoute>}></Route>
           <Route path='/incometaxreport' element={<ProtectedRoute>< IncomeTaxReport data={incometax}/></ProtectedRoute>}></Route>
           <Route path='/vattaxreport' element={<ProtectedRoute>< VatTaxReport data={vattax}/></ProtectedRoute>}></Route>
+          <Route path='/admin/login' element={<AdminLogin />}></Route>
+          <Route path='/admin/create' element={<IsAdmin><CreateEmployee /></IsAdmin>}></Route>
           <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>
