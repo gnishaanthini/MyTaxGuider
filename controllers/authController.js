@@ -6,7 +6,7 @@ import bcrypt from 'bcryptjs'
 
 const register = async (req, res, next) => {
     const { username, password, userType } = req.body
-    if (!username || !password || !userType) {
+    if (!username || !password || userType!=='Customer') {
         throw new BadRequestError('please provide all values')
     }
 

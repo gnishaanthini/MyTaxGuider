@@ -7,7 +7,7 @@ import Wrapper from '../../assets/wrappers/RegisterPage'
 const initialState = {
     username: '',
     password: '',
-    userType: 'Admin',
+    userType: 'Employee',
 }
 
 const AdminLogin = () => {
@@ -23,6 +23,10 @@ const AdminLogin = () => {
 
     const handleChange = (e) => {
         setValues({ ...values, [e.target.name]: e.target.value })
+    }
+
+    const toggleMember = () => {
+        setValues({ ...values, userType: values.userType==='Employee'? 'Admin': 'Employee' })
     }
 
     const onSubmit = (e) => {
@@ -49,7 +53,7 @@ const AdminLogin = () => {
         <Wrapper className='full-page'>
             <form className='form' onSubmit={onSubmit}>
                 <Logo className='logo' />
-                <h3>Login</h3>
+                <h3>{values.userType==='Employee' ? 'Employee Login' : 'Admin Login'}</h3>
 
                 {showAlert && <Alert />}
 
@@ -71,6 +75,13 @@ const AdminLogin = () => {
                 <button type='submit' className='btn btn-block' disabled={isLoading}>
                     submit
                 </button>
+
+                <p>
+                    {values.userType==='Employee' ? 'Login as Admin? ' : 'Login as Employee? '}
+                    <button type='button' onClick={toggleMember} className='member-btn'>
+                        {values.userType==='Employee' ? 'Admin Login' : 'Employee Login'}
+                    </button>
+                </p>
             </form>
         </Wrapper>
     )

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { FormRow, Logo, Alert } from '../../components'
 import { useAppContext } from '../../context/appContext'
 // import { useNavigate } from 'react-router-dom'
@@ -18,7 +18,8 @@ const CreateEmployee = () => {
         isLoading,
         showAlert,
         displayAlert,
-        registerUser
+        registerAdmin,
+        registerEmployee
     } = useAppContext()
 
     const handleChange = (e) => {
@@ -38,7 +39,11 @@ const CreateEmployee = () => {
         }
         const currentUser = { username, password, userType }
         
-        registerUser(currentUser)
+        if (values.userType === 'Employee') {
+            registerEmployee(currentUser)
+        } else {
+            registerAdmin(currentUser)
+        }
     }
 
     // useEffect(() => {
