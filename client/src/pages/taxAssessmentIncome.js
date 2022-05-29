@@ -1,12 +1,13 @@
 import React, { useState, setState } from 'react';
 import Form from 'react-bootstrap/Form';
-import './style.css';
+
 import Button from 'react-bootstrap/Button';
 import Navbar from '../components/Navbar';
 import generatePDF from "./reportGenerator";
 // import { PDFDownloadLink } from "@react-pdf/renderer";
 // import { PdfDocument } from "./Tax";
 import { useNavigate } from "react-router-dom";
+import Wrapper from '../assets/wrappers/Formstyle'
 
 function TaxAssessmentIncome(props) {
 
@@ -113,7 +114,7 @@ function TaxAssessmentIncome(props) {
       }}>Tax Assessment for Income Tax</h1>
       <br></br>
       <br></br>
-      <div className="form">
+      <Wrapper className="form">
         <Form>
           {/* <h4 style={{
             textAlign: "center",
@@ -138,7 +139,7 @@ function TaxAssessmentIncome(props) {
           </Form.Group>
           <br></br>
           <Form.Group>
-            <Form.Label>TIN</Form.Label>
+            <Form.Label>Tax Identification Number</Form.Label>
 
             <Form.Control type="text" id="tin" value={tin} onChange={(e) => handleInputChange(e)} placeholder="TIN" />
 
@@ -207,7 +208,7 @@ function TaxAssessmentIncome(props) {
         }
       </PDFDownloadLink>}   */}
 
-      </div>
+      </Wrapper>
     </div>
 
   )

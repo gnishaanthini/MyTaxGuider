@@ -1,5 +1,5 @@
 import React, { useState, setState } from 'react';
-import './style.css';
+import Wrapper from '../assets/wrappers/Formstyle'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Navbar from '../components/Navbar';
@@ -65,7 +65,7 @@ function TaxAssessmentVat(props) {
       <br></br>
       <br></br>
 
-      <div className="form">
+      <Wrapper className="form">
         <Form>
           {/* <h4 style={{
             textAlign: "center",
@@ -90,7 +90,7 @@ function TaxAssessmentVat(props) {
           </Form.Group>
           <br></br>
           <Form.Group>
-            <Form.Label>TIN</Form.Label>
+            <Form.Label>Tax Identification Number</Form.Label>
 
             <Form.Control type="text" id="tin" value={tin} onChange={(e) => handleInputChange(e)} placeholder="TIN" />
 
@@ -99,7 +99,7 @@ function TaxAssessmentVat(props) {
           <Form.Group>
             <Form.Label>Year of Assessment</Form.Label>
 
-            <Form.Control type="text" id="year" value={year} onChange={(e) => handleInputChange(e)} placeholder="Year of Assessment" />
+            <Form.Control  type="text" id="year" value={year} onChange={(e) => handleInputChange(e)} placeholder="Year of Assessment" />
 
           </Form.Group>
 
@@ -140,7 +140,7 @@ function TaxAssessmentVat(props) {
 
         </Form>
 
-      </div>
+      </Wrapper>
     </div>
 
   )
