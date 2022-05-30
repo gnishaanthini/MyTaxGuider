@@ -33,6 +33,12 @@ export const SidebarData = [
     // icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text'
   },
+  {
+    title: 'FAQ',
+    path: '/faq',
+    icon: <IoIcons.IoIosPaper />,
+    cName: 'nav-text'
+  },
 
   
 
