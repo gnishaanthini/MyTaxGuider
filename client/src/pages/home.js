@@ -1,7 +1,7 @@
 import React, { useState, setState } from 'react';
 import Navbar from '../components/Navbar';
 import { useAppContext } from '../context/appContext';
-import image from "../images/home.png";
+import image from "../assets/images/home.png";
 
 
 
@@ -25,8 +25,8 @@ function Home() {
             <Navbar />
 
             <div style={{
-                backgroundImage: `url(${image})`, backgroundRepeat: "no-repeat", backgroundSize: "contain",
-                height: 600
+                backgroundImage: `url(${image})`, backgroundRepeat: "no-repeat", backgroundSize:'contain',
+                height: 600,width:'100%', objectFit:'cover'
             }}>
 
                 <h1 style={{
