@@ -15,6 +15,13 @@ if (process.env.NODE_ENV !== 'Production') {
 }
 
 // production
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+import path from 'path'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+app.use(express.static(path.resolve(__dirname, './client/build')))
 
 // routes
 import authRouter from './routes/authRoute.js'
@@ -25,14 +32,14 @@ import employeeRouter from './routes/employeeRoutes.js'
 import notFoundMiddleware from './middleware/not-found.js'
 import errorHandlerMiddeware from './middleware/error-handler.js'
 
-// test
-app.get('/', (req, res) => {
-    res.send('Welcome!')
-})
-
 app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/admin', adminRouter)
 app.use('/api/v1/emp', employeeRouter)
+
+// only when production
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './client/build', 'index.html'))
+})
 
 app.use(notFoundMiddleware)
 app.use(errorHandlerMiddeware)
