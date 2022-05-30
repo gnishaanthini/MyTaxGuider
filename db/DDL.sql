@@ -4,3 +4,8 @@ CREATE TABLE Users (
     password varchar(100) NOT null,
     userType enum('Customer', 'Employee', 'Admin') NOT null DEFAULT 'Customer'
 );
+
+CREATE TABLE faq (
+    quection TEXT NOT null,
+    answer Text
+);
