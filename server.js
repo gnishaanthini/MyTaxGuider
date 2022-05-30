@@ -5,6 +5,7 @@ dotenv.config()
 // express
 import express from 'express'
 import 'express-async-errors'
+
 const app = express()
 app.use(express.json())
 
@@ -13,6 +14,9 @@ import morgan from 'morgan'
 if (process.env.NODE_ENV !== 'Production') {
     app.use(morgan('dev'))
 }
+
+//
+//import { Server } from "socket.io";  
 
 // production
 import { dirname } from 'path'
@@ -43,6 +47,18 @@ app.get('*', (req, res) => {
 
 app.use(notFoundMiddleware)
 app.use(errorHandlerMiddeware)
+
+//const io = new Server(PORT);
+
+// io.on("connection", (socket) => {
+//     // send a message to the client
+//     //socket.emit("receive_message", data);  
+//     // receive a message from the client
+
+//     socket.on("send_message", (data) => {
+//         socket.emit("receive_message", data);  
+//     });
+//   });
 
 // server
 const PORT = process.env.PORT || 5500

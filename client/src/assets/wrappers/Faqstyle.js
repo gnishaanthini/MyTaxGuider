@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Wrapper = styled.section`
+const Wrapper = styled.section`{
 .faqs {
 	width: 100%;
 	max-width: 768px;
@@ -58,6 +58,7 @@ const Wrapper = styled.section`
 .faqs .faq.open .faq-answer {
 	max-height: 1000px;
 	opacity: 1;
+}
 }
 `
 export default Wrapper
