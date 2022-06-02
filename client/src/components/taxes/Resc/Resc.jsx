@@ -3,7 +3,7 @@ import React from "react";
 function Resc(){
     return(
         <div>
-            <div className="container-fluid p-5 m-4"><h1>Pay As You Earn Tax</h1></div>
+            <div className="container-fluid p-5 m-4"><h1>Economic Service Charge</h1></div>
 
             <div className="container m-4 mx-auto">
                 <p align="justify">
