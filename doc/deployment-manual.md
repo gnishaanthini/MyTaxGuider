@@ -1,6 +1,6 @@
 # Deploy MyTaxGuider
   
-![LAMP STACK](/client/src/assets/images/main.svg)
+![MyTaxGuider](/client/src/assets/images/main.svg)
 
 
 ## :bookmark_tabs: Table of Contents
@@ -16,7 +16,7 @@
     - [Client](#client)
     - [Server](#server)
     - [Database](#database)
-          - [:o: Deploy To Heroku](#o-deploy-to-heroku)
+          - [:o: Deploy To Heroku :o:](#o-deploy-to-heroku-o)
 
 ## :dart: Project Description
 A web based **Tax Management App** built with *MySQL*, *Express*, *React* and *Node*  
@@ -89,14 +89,12 @@ app.get('*', (req, res) => {
 ```
 
 ### Server
-Hosted by **[heroku](https://www.heroku.com)**
+- Hosted by **[heroku](https://www.heroku.com)**
 
 ### Database
-Hosted by **[freemysqlhosting](https://www.freemysqlhosting.net)**
+- Hosted by **[freemysqlhosting](https://www.freemysqlhosting.net)** ( :sparkles: *5mb free MySQL solution* )
 
-:sparkles: *5mb free MySQL solution*
-
-###### :o: Deploy To Heroku
+###### :o: Deploy To Heroku :o:
 - install heroku cli
 - heroku login
 - rm -rf .git
