@@ -1,14 +1,14 @@
 import React, { useState, setState } from 'react';
 import Navbar from '../components/Navbar';
-import Rvat from "../components/taxes/Rvat/Rvat";
+import Rpaye from "../components/taxes/Rpaye/Rpaye";
 
-function Home() {
+function PayeR() {
     return(
         <div>
             <Navbar/>
-            <Rvat/>
+            <Rpaye/>
         </div>
     )
 }
 
-export default Home;
+export default PayeR;

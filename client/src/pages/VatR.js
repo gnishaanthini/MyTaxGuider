@@ -2,7 +2,7 @@ import React, { useState, setState } from 'react';
 import Navbar from '../components/Navbar';
 import Rvat from "../components/taxes/Rvat/Rvat";
 
-function Home() {
+function VatR() {
     return(
         <div>
             <Navbar/>
@@ -11,4 +11,4 @@ function Home() {
     )
 }
 
-export default Home;
+export default VatR;
