@@ -16,7 +16,7 @@
     - [Client](#client)
     - [Server](#server)
     - [Database](#database)
-          - [:o: Deploy To Heroku :o:](#o-deploy-to-heroku-o)
+  - [:rocket: Deploy To Heroku](#rocket-deploy-to-heroku)
 
 ## :dart: Project Description
 A web based **Tax Management App** built with *MySQL*, *Express*, *React* and *Node*  
@@ -94,14 +94,23 @@ app.get('*', (req, res) => {
 ### Database
 - Hosted by **[freemysqlhosting](https://www.freemysqlhosting.net)** ( :sparkles: *5mb free MySQL solution* )
 
-###### :o: Deploy To Heroku :o:
-- install heroku cli
-- heroku login
-- rm -rf .git
-- git init
-- git add .
-- git commit -m "first commit"
-- heroku create nameOfTheApp
-- git remote -v
-- add env variables using heroku nameOfTheApp settings
-- git push heroku main/master
+## :rocket: Deploy To Heroku
+1. [install heroku cli](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli)
+2. [heroku login](https://id.heroku.com/login)
+3. 
+```sh
+rm -rf .git
+git init
+git add .
+git commit -m "first commit"
+```
+4. 
+```sh
+heroku create nameOfTheApp
+```
+5. add env variables using heroku nameOfTheApp settings
+6. 
+```sh
+git remote -v
+git push heroku main/master
+```
