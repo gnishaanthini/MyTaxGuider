@@ -1,6 +1,4 @@
 import React, { useState, setState } from 'react';
-import Table from 'react-bootstrap/Table';
-// import Form from 'react-bootstrap/Form';
 import { Form, Button, InputGroup, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import Wrapper from '../assets/wrappers/Formstyle'
 import Navbar from '../components/Navbar';

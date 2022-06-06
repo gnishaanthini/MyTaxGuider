@@ -49,7 +49,7 @@ function TaxAssessmentVat(props) {
 
     let path = '/vattaxreport';
     navigate(path);
-    // alert(`The name you entered was: ${name}`);
+   
     props.handleSubmit(name, nic, registration, price, year, tin, type);
     event.preventDefault();
   }
@@ -67,11 +67,7 @@ function TaxAssessmentVat(props) {
 
       <Wrapper className="form">
         <Form>
-          {/* <h4 style={{
-            textAlign: "center",
-            marginLeft: "200px",
-            color: "green"
-          }}>Tax Assessment for Income Tax</h4> */}
+         
 
 
           <br></br>

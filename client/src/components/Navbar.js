@@ -5,7 +5,6 @@ import { IoIosCreate } from 'react-icons/io'
 import { Link } from 'react-router-dom';
 import { SidebarData } from './SideBarData';
 import './Navbar.css';
-import SubMenu from "./SubMenu";
 import { IconContext } from 'react-icons';
 import Wrapper from '../assets/wrappers/Navbar'
 import { useAppContext } from '../context/appContext'
