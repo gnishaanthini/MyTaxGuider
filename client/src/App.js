@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Error, Landing, Register, ProtectedRoute,EconomicServiceCharge,IncomeTax,Paye,SimpleValueAddedTax,TouristVatRefund,ValueAddedTax } from './pages/'
+import { Error, Landing, Register, ProtectedRoute,EconomicServiceCharge,IncomeTax,Paye,SimpleValueAddedTax,TouristVatRefund,ValueAddedTax, VatR, TvrsR, SvatR, PayeR, IncomeR, EscR } from './pages/'
 import { AdminLogin, CreateEmployee, IsAdmin } from './pages/admin/'
 import React, { useState, setState } from 'react';
 
@@ -63,6 +63,12 @@ function App() {
           <Route path ="/Guidlines/Paye" element={<ProtectedRoute><Paye/></ProtectedRoute>}></Route>
           <Route path ="/Guidlines/SimpleValueAddedTax" element={<ProtectedRoute><SimpleValueAddedTax/></ProtectedRoute>}></Route>
 
+          <Route path='/rnr/VatR' element={<ProtectedRoute><VatR/></ProtectedRoute>}></Route>
+          <Route path='/rnr/TvrsR' element={<ProtectedRoute><TvrsR/></ProtectedRoute>}></Route>
+          <Route path='/rnr/SvatR' element={<ProtectedRoute><SvatR/></ProtectedRoute>}></Route>
+          <Route path='/rnr/PayeR' element={<ProtectedRoute><PayeR/></ProtectedRoute>}></Route>
+          <Route path='/rnr/IncomeR' element={<ProtectedRoute><IncomeR/></ProtectedRoute>}></Route>
+          <Route path='/rnr/EscR' element={<ProtectedRoute><EscR/></ProtectedRoute>}></Route>
           <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>

@@ -9,4 +9,12 @@ import SimpleValueAddedTax from './TaxGuidlines/SimplifiedValueAddedTax/Simplifi
 import TouristVatRefund from './TaxGuidlines/TouristVatRefund/TouristVatRefund'
 import ValueAddedTax from './TaxGuidlines/ValueAddedTax/ValueAddedTax'
 
-export { Error, Landing, Register, ProtectedRoute,EconomicServiceCharge,IncomeTax,Paye,SimpleValueAddedTax,TouristVatRefund,ValueAddedTax }
+import VatR from "./VatR";
+import TvrsR from "./TvrsR"
+import SvatR from "./SvatR"
+import PayeR from "./PayeR"
+import IncomeR from "./IncometaxR"
+import EscR from "./EscR"
+
+
+export { Error, Landing, Register, ProtectedRoute,EconomicServiceCharge,IncomeTax,Paye,SimpleValueAddedTax,TouristVatRefund,ValueAddedTax, VatR, TvrsR, SvatR, PayeR, IncomeR, EscR }
