@@ -13,7 +13,7 @@ const createQuestion = async (req, res, next) => {
 
     const faq = new Faq(question, created_by)
     const [ result, __ ] = await faq.create()
-    console.log(result);
+    //console.log(result);
 
     res.status(StatusCodes.CREATED).json({ faq: {
         question: question,
@@ -23,25 +23,22 @@ const createQuestion = async (req, res, next) => {
 
 const answerQuestion = async (req, res) => {
     const { id, answer, answered_by } = req.body
-    // if (!username || !password) {
-    //     throw new BadRequestError('please provide all values')
-    // }
+    if (!id || !answer || !answered_by) {
+        throw new BadRequestError('please provide all values')
+    }
 
-    // const [userAlreadyExists, _ ] = await User.findOne(username, userType)
+    const [userAlreadyExists, _ ] = await User.findById(req.user.userId)
 
-    // if (userAlreadyExists.length===0) {
-    //     throw new UnAuthenticatedError('Invalid Credentials')
-    // }
+    if (userAlreadyExists.length===0) {
+        throw new UnAuthenticatedError('Invalid Credentials')
+    }
 
-    // const user = userAlreadyExists[0]
-    // const isPasswordCorrect = await bcrypt.compare(password, user.password)
-    // if (!isPasswordCorrect) {
-    //     throw new UnAuthenticatedError('Invalid Credentials')
-    // }
+    const user = userAlreadyExists[0]
     
-    // const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_LIFETIME})
+    if (user.userType==='Customer') {
+        throw new UnAuthenticatedError('You are unautorized')
+    }
 
-    // user.password = undefined
     Faq.answerQuection(id, answer, answered_by)
     res.status(StatusCodes.OK).json({ answer: answer, answered_by: answered_by })
 }
@@ -50,7 +47,6 @@ const getAllFaq = async (req, res, next) => {
     
     const [ result, __ ] = await Faq.getAllfaq()
     res.status(StatusCodes.OK).json({ faqs: result })
-    //console.log(result)
 }
 
 export {

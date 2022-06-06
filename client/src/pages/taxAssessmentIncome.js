@@ -77,7 +77,7 @@ function TaxAssessmentIncome(props) {
 
   function handleSubmit(event) {
 
-    console.log(name, nic, source, paysheet, income, year, tin);
+    //console.log(name, nic, source, paysheet, income, year, tin);
 
     setTax({
       name: name,

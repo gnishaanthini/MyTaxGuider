@@ -45,7 +45,7 @@ function TaxAssessmentVat(props) {
 
   function handleSubmit(event) {
 
-    console.log(name, nic, registration, price, year, tin, type);
+    //console.log(name, nic, registration, price, year, tin, type);
 
     let path = '/vattaxreport';
     navigate(path);

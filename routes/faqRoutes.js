@@ -8,9 +8,9 @@ import {
     getAllFaq
 } from "../controllers/faqController.js"
 
-router.route('/question').post(createQuestion)
-router.route('/answer').post(answerQuestion)
-router.route('/getfaqs').get(getAllFaq)
+router.route('/question').post(authenticateUser, createQuestion)
+router.route('/answer').post(authenticateUser, answerQuestion)
+router.route('/getfaqs').get(authenticateUser, getAllFaq)
 
 
 export default router
