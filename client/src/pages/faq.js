@@ -31,6 +31,7 @@ function FAQ() {
             return fq;
         }))
     }
+    
     const handleChange = (e) => {
         setNewQuestion(e.target.value)
     }
@@ -38,10 +39,7 @@ function FAQ() {
     const handleChangeAns = (e) => {
         setNewAnswer(e.target.value)
     }
-    const handleSubmit = text=> event=> {
-        event.preventDefault()
-        console.log(text)
-      }
+
     const onSubmit = async (e) => {
         e.preventDefault()
         await authFetch.post('/faq/question', {question :newQuestion, created_by: user.username})
