@@ -82,14 +82,13 @@ function FAQ() {
                     onClick={() => toggleFAQ(i)}>
 
                         <div className="faq-question">
-                            {faq.question}
+                            <span className='created-by'>{faq.created_by}>> </span>{faq.question}
                         </div>
 
                         <div className="faq-answer" onClick={(e) => e.stopPropagation()}>
-                        {faq.answer}
-                        <div>
-                            {faq.answered_by}
-                        </div>
+                        {faq.answer && <span className='answered-by'>{faq.answered_by}>> </span>}
+                        { faq.answer }
+                        
                         {!faq.answer && (user.userType==='Employee' || user.userType==='Admin') &&
                             <form className='form' onSubmit={(e) => onSubmitAns(e, faq.id)}>
                             <FormRow

@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
 const Wrapper = styled.section`{
+
+.form {
+
+}
 .faqs {
 	width: 100%;
 	max-width: 768px;
@@ -76,6 +80,21 @@ const Wrapper = styled.section`{
 
 // 	transition: all 0.4s ease;
 // }
+.created-by {
+	font-weight: bolder;
+	background: var(--primary-100);
+	margin-right: 10px;
+	padding: 3px 3px;
+	border-radius: 7px;
+}
+.answered-by {
+	font-weight: bolder;
+	background: var(--green-light);
+	margin-right: 10px;
+	padding: 3px 3px;
+	border-radius: 7px;
+}
+
 }
 `
 export default Wrapper
