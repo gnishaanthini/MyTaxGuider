@@ -80,11 +80,16 @@ function FAQ() {
                     className={"faq " + (faq.open ? 'open' : '')}
                     key={i}
                     onClick={() => toggleFAQ(i)}>
+
                         <div className="faq-question">
                             {faq.question}
                         </div>
+
                         <div className="faq-answer" onClick={(e) => e.stopPropagation()}>
                         {faq.answer}
+                        <div>
+                            {faq.answered_by}
+                        </div>
                         {!faq.answer && (user.userType==='Employee' || user.userType==='Admin') &&
                             <form className='form' onSubmit={(e) => onSubmitAns(e, faq.id)}>
                             <FormRow
@@ -96,9 +101,8 @@ function FAQ() {
                             <button type='submit' className='btn btn-block' >submit</button>
                         </form>
                         }
-                            
-                            
                         </div>
+
                     </div>
                 </div>
                 ))}
