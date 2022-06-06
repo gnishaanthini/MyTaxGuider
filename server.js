@@ -23,6 +23,15 @@ import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 import path from 'path'
 
+import helmet from 'helmet'
+import xss from 'xss-clean'
+import mongoSanitize from 'express-mongo-sanitize'
+
+app.use(express.json())
+app.use(helmet())
+app.use(xss())
+app.use(mongoSanitize())
+
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 app.use(express.static(path.resolve(__dirname, './client/build')))
@@ -36,10 +45,11 @@ import faqRouter from './routes/faqRoutes.js'
 // middlewares
 import notFoundMiddleware from './middleware/not-found.js'
 import errorHandlerMiddeware from './middleware/error-handler.js'
+import rateLimiter from './middleware/rateLimiter.js'
 
-app.use('/api/v1/auth', authRouter)
-app.use('/api/v1/admin', adminRouter)
-app.use('/api/v1/emp', employeeRouter)
+app.use('/api/v1/auth', rateLimiter, authRouter)
+app.use('/api/v1/admin', rateLimiter, adminRouter)
+app.use('/api/v1/emp', rateLimiter, employeeRouter)
 app.use('/api/v1/faq', faqRouter)
 
 // only when production
