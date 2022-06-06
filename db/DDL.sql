@@ -6,6 +6,9 @@ CREATE TABLE Users (
 );
 
 CREATE TABLE faq (
-    quection TEXT NOT null,
-    answer Text
+    id int AUTO_INCREMENT PRIMARY KEY,
+    question varchar(100) NOT null,
+    answer varchar(100) NOT null,
+    created_by varchar(20) NOT null,
+    answered_by varchar(20) NOT null
 );
