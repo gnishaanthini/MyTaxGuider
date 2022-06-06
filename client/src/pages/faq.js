@@ -62,7 +62,7 @@ function FAQ() {
             <div>
                 <form className='form' onSubmit={onSubmit}>
                     <FormRow
-                    type='faq-question'
+                    type='text'
                     name='faq-question'
                     value={newQuestion}
                     handleChange={handleChange}
@@ -92,7 +92,7 @@ function FAQ() {
                         {!faq.answer && (user.userType==='Employee' || user.userType==='Admin') &&
                             <form className='form' onSubmit={(e) => onSubmitAns(e, faq.id)}>
                             <FormRow
-                            type='faq-answer'
+                            type='text'
                             name='faq-answer'
                             value={newAnswer}
                             handleChange={handleChangeAns}
