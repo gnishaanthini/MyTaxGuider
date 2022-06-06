@@ -77,15 +77,15 @@ function FAQ() {
                 //<FAQ faq={faq} index={i} toggleFAQ={toggleFAQ} />
                     <div className='faq' key={faq.id}>
                     <div
-                    className={"faq " + (faq.open ? 'open' : 'open')}
+                    className={"faq " + (faq.open ? 'open' : '')}
                     key={i}
                     onClick={() => toggleFAQ(i)}>
                         <div className="faq-question">
                             {faq.question}
                         </div>
-                        <div className="faq-answer">
+                        <div className="faq-answer" onClick={(e) => e.stopPropagation()}>
                         {faq.answer}
-                        {!faq.answer && 
+                        {!faq.answer && (user.userType==='Employee' || user.userType==='Admin') &&
                             <form className='form' onSubmit={(e) => onSubmitAns(e, faq.id)}>
                             <FormRow
                             type='faq-answer'
