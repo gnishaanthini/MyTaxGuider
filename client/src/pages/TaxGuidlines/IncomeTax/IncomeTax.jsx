@@ -5,25 +5,26 @@ function IncomeTax(){
     return(
         <>
              <Navbar/>
-            <div class="bg-info container-fluid p-5   border" ><h1>Income tax</h1></div>
+            <div class="container-fluid p-5" style={{backgroundColor:"#9691B6"}}
+ ><h1>Income tax</h1></div>
             <div class="bg-light container ">
-            <div class="container-fluid p-5   border">
+            <div class="container-fluid p-5   ">
                 <h4>Sources of Income</h4> 
                 <ul>
-                    <li>
-                        <div>Employment Income</div>
-                        <div>Calculation of an individual's gains and profits from employment for a year of assessment</div>
+                    <li class="mb-3">
+                        <div><h5>Employment Income</h5>Calculation of an individual's gains and profits from employment for a year of assessment</div>
+                        <div></div>
                     </li>
-                    <li>
-                        <div>Business Income</div>
-                        <div>A person's income from a business for a year of assessment is the person's gains and profits from conducting the business for the year.</div>
+                    <li class="mb-3">
+                        <div><h5>Business Income</h5></div>
+                        <div >A person's income from a business for a year of assessment is the person's gains and profits from conducting the business for the year.</div>
                         </li>
-                    <li>
-                        <div>Investment Income</div>
+                    <li class="mb-3">
+                        <div><h5>Investment Income</h5></div>
                         <div>A person's income from an investment for a year of assessment is the person's gains and profits from conducting the investment for the year.</div>
                         </li>
-                    <li>
-                        <div>Other Income</div>
+                    <li class="mb-3">
+                        <div ><h5 >Other Income</h5></div>
                         <div>A person’s income from other sources for a year of assessment is the person’s gains and profits from any source of any kind, however does not include profits of a casual and non-recurring nature.</div>
                         </li>
                 </ul>
@@ -38,7 +39,7 @@ function IncomeTax(){
 except that an individual who is a trustee, receiver, executor or liquidator shall not be entitled to deduct this personal relief as such trustee, receiver, executor or liquidator, and the relief shall not be deducted against gains from the realisation of investment assets.​​</p>
             </div>
 
-            <div class="container-fluid p-5   border" >
+            <div class="container-fluid p-5" >
                 <h4>Payment of Tax</h4>
                 <table class="bg-secondary text-white  table table-bordered table-hover">
                     <thead>
@@ -72,7 +73,7 @@ except that an individual who is a trustee, receiver, executor or liquidator sha
                     
                 </table>
             </div>
-           <div class="container-fluid p-5   border">
+           <div class="container-fluid p-5">
                <h4>Furnishing Income Tax (IT) Return/ Statement of Estimated Tax payable (SET)</h4>
                <ul>
                    <li>

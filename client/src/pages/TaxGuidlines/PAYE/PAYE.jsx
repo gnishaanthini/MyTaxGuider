@@ -5,18 +5,18 @@ function Paye(){
     return(
         <>
          <Navbar/>
-        <div class="bg-info container-fluid p-5   border">
+        <div class=" container-fluid p-5   border" style={{backgroundColor:"#9691B6"}}>
             <h1>Pay As You Earn</h1>
         </div>
         <div class="bg-light container ">
-            <div class="container-fluid p-5   border">
+            <div class="container-fluid p-5">
             <h4>
                 Payment of Tax
             </h4>
             <p>Every employer has obligation to deduct PAYE Tax from the Employee as per PAYE tax tables and the total deducted amount should remit to the department on or before 15th of the following month.</p>
             </div>
 
-            <div class="container-fluid p-5   border">
+            <div class="container-fluid p-5">
                 <h4>Furnishing PAYE Returns </h4>
                 <p>Due date :<br/>
 Return of PAYE Tax (PAYE) for a relevant Assessment Year, should be furnished on or before 30th day of the month of April, of the following Assessment Year.<br/>
@@ -25,7 +25,7 @@ Submit to :<br/>
 Central Document Management Unit (CDMU), 1st Floor of Inland Revenue building</p>
             </div>
 
-            <div class="container-fluid p-5   border">
+            <div class="container-fluid p-5">
                 <h4>PAYE Tax Table (Year of Assessment 2019-2020-from 01/01/2020 to 31/03/2020)</h4>
                 <div class="container-fluid p-3">
                     <ul>
@@ -40,7 +40,7 @@ Central Document Management Unit (CDMU), 1st Floor of Inland Revenue building</p
 
             </div>
 
-            <div class="container-fluid p-5   border">
+            <div class="container-fluid p-5">
                 <table  class="bg-secondary text-white table table-bordered table-hover">
                     <thead>
                     <tr><th><h4>Annual Declaration of Employer - PAYE/APIT</h4></th></tr>

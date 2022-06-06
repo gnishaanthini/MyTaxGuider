@@ -6,7 +6,7 @@ function TouristVatRefund(){
 
         <div>
              <Navbar/>
-            <div class="bg-info container-fluid p-5 "><h1>Tourist VAT Refund Scheme</h1></div>
+            <div class="container-fluid p-5 " style={{backgroundColor:"#9691B6"}}><h1>Tourist VAT Refund Scheme</h1></div>
             <div class="bg-light container  mb-4 ">
             <div class="bg-light container  mb-4 ">
                 <h4>Goods eligible to claim under TVRS</h4>

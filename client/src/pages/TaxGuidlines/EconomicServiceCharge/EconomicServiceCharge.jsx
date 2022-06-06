@@ -8,7 +8,7 @@ function EconomicServiceCharge(){
         
         <div>
             <Navbar />
-            <div class=" bg-info container-fluid p-5 "><h1>Economic Service Charge</h1></div>
+            <div class="container-fluid p-5 " style={{backgroundColor:"#9691B6"}}><h1>Economic Service Charge</h1></div>
             <div class="bg-light container  mb-4"><div class=" container  mb-4">
                 <h4>Tax Liability</h4>
                 <p>Every person or partnership who/which is carrying on or carrying out a trade, business, profession or vocation, whether such person or partnership is liable to pay income tax or not, is required to pay ESC.
@@ -48,7 +48,7 @@ However, Cooperative Societies, aviation and shipping companies, local Governmen
                 <h4>Payment of Tax</h4>
                 <p>ESC is payable on self-assessment basis in four quarters. Payments should be made using the specific paying-in-slip and the period of tax should be correctly indicated. </p>
                 <p>
-                    <table class="table table-bordered table-hover">
+                    <table class="bg-secondary text-white table table-bordered table-hover">
                         <thead><tr><th>Quarter</th><th>Payment Date</th></tr></thead>
                         <tbody>
                         <tr><td>1st Quarter</td><td>on or before the 20th July</td></tr>

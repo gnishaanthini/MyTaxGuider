@@ -5,7 +5,7 @@ function ValueAddedTax(){
     return(
         <div>
              <Navbar/>
-            <div class="bg-info container-fluid p-5 ">
+            <div class="container-fluid p-5 " style={{backgroundColor:"#9691B6"}}>
                 <h1>Value Added Tax</h1>
             </div>
             <div class="bg-light container  mb-4">
