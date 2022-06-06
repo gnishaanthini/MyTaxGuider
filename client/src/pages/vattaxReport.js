@@ -42,7 +42,7 @@ function VatTaxReport(props) {
             }}>VAT Tax Report</h1>
             <br></br>
             <br></br>
-            <Wrapper className='form'><Form style={{width:'250%'}}>
+            <Wrapper className='form'><Form style={{width:'100%'}}>
                 <InputGroup className="mb-3">
                     <InputGroup.Text id="inputGroup-sizing-default">Name</InputGroup.Text><span></span>
                     <FormControl type="text" id="name" value={arr.name}
