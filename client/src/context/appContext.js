@@ -187,7 +187,8 @@ const AppProvider = ({children}) => {
             loginUser,
             logoutUser,
             registerAdmin,
-            registerEmployee
+            registerEmployee,
+            authFetch
         }}>
         {children}
     </AppContext.Provider>

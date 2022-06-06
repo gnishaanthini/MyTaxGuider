@@ -4,10 +4,13 @@ const router = express.Router()
 
 import { 
     createQuestion,
-    answerQuestion 
+    answerQuestion ,
+    getAllFaq
 } from "../controllers/faqController.js"
 
-router.route('/question').post(authenticateUser, createQuestion)
-router.route('/answer').post(authenticateUser, answerQuestion)
+router.route('/question').post(createQuestion)
+router.route('/answer').post(answerQuestion)
+router.route('/getfaqs').get(getAllFaq)
+
 
 export default router

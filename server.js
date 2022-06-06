@@ -31,6 +31,7 @@ app.use(express.static(path.resolve(__dirname, './client/build')))
 import authRouter from './routes/authRoute.js'
 import adminRouter from './routes/adminRoutes.js'
 import employeeRouter from './routes/employeeRoutes.js'
+import faqRouter from './routes/faqRoutes.js'
 
 // middlewares
 import notFoundMiddleware from './middleware/not-found.js'
@@ -39,6 +40,7 @@ import errorHandlerMiddeware from './middleware/error-handler.js'
 app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/admin', adminRouter)
 app.use('/api/v1/emp', employeeRouter)
+app.use('/api/v1/faq', faqRouter)
 
 // only when production
 app.get('*', (req, res) => {

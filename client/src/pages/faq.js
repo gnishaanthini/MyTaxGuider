@@ -1,25 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Wrapper from '../assets/wrappers/Faqstyle'
+import { useAppContext } from '../context/appContext'
+import { FormRow } from '../components';
 
 function FAQ() {
-    const [faqs, setfaqs] = useState([
-        {
-            question: 'How many programmers does it take to screw in a lightbulb?',
-            answer: 'None. We don\'t address hardware issues.',
-            open: true
-        },
-        {
-            question: 'Who is the most awesome person?',
-            answer: 'You. The Viewer.',
-            open: false
-        },
-        {
-            question: 'How many questions does it take to make a successful FAQ Page?',
-            answer: 'This many.',
-            open: false
-        }
-    ]);
+    const [count, setCount] = useState(1)
+    const { authFetch, user } = useAppContext()
+    const [newQuestion, setNewQuestion] = useState("")
+    const [faqs, setfaqs] = useState([]);
+
+    
+    useEffect(()=> {
+        const fetchData = async() => {
+            const response = await authFetch.get('/faq/getfaqs');
+            setfaqs(response?.data?.faqs);
+        
+        };
+        fetchData();
+    }, [count]);
 
     const toggleFAQ = index => {
         setfaqs(faqs.map((fq, i) => {
@@ -31,31 +30,59 @@ function FAQ() {
             return fq;
         }))
     }
+    const handleChange = (e) => {
+        setNewQuestion(e.target.value)
+    }
+    // const showReply = () => {
+
+    // }
+    const onSubmit = async (e) => {
+        e.preventDefault()
+        await authFetch.post('/faq/question', {question :newQuestion, created_by: user.username})
+        setNewQuestion("")
+        setCount(count+1)
+    }
 
     return (
         <div>
             <Navbar/>
             <Wrapper>
+
+            <div>
+                <form className='form' onSubmit={onSubmit}>
+                    <FormRow
+                    type='faq-question'
+                    name='faq-question'
+                    value={newQuestion}
+                    handleChange={handleChange}
+                    />
+                    <button type='submit' className='btn btn-block' >submit</button>
+                </form>
+            </div>
+
+
             <div className="faqs">
                 {faqs.map((faq, i) => (
                 //<FAQ faq={faq} index={i} toggleFAQ={toggleFAQ} />
-                <div className='faq'>
-                <div
-                className={"faq " + (faq.open ? 'open' : '')}
-                key={i}
-                onClick={() => toggleFAQ(i)}
-            >
-                <div className="faq-question">
-                    {faq.question}
+                    <div className='faq'>
+                    <div
+                    className={"faq " + (faq.open ? 'open' : '')}
+                    key={i}
+                    onClick={() => toggleFAQ(i)}>
+                        <div className="faq-question">
+                            {faq.question}
+                        </div>
+                        <div className="faq-answer">
+                            {faq.answer}
+                            {/* <button class='add-answer'>Reply</button> */}
+                        </div>
+                    </div>
                 </div>
-                <div className="faq-answer">
-                    {faq.answer}
-                </div>
-            </div>
-            </div>
                 ))}
             </div>
-		</Wrapper>
+
+            
+		    </Wrapper>
         </div>
     );
 

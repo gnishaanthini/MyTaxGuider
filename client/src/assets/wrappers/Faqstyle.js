@@ -59,6 +59,23 @@ const Wrapper = styled.section`{
 	max-height: 1000px;
 	opacity: 1;
 }
+
+// .add-question {
+// 	//width: 100%;
+// 	//max-width: 768px;
+// 	margin: 0 auto;
+// 	padding: 15px;
+// 	margin: 15px;
+// 	padding: 15px;
+// 	background-color: #FFF;
+// 	border-radius: 8px;
+// 	//box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+// 	position: relative;
+// 	font-size: 20px;
+// 	padding-right: 80px;
+
+// 	transition: all 0.4s ease;
+// }
 }
 `
 export default Wrapper
