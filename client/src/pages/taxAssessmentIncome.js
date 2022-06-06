@@ -79,7 +79,7 @@ function TaxAssessmentIncome(props) {
       tin: tin
     })
 
-    let path = '/incometaxreport';
+    let path = '/SelfTaxAssessment/incometaxreport';
     navigate(path);
 
     props.handleSubmit(name, nic, source, paysheet, income, year, tin);

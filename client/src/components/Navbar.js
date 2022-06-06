@@ -5,6 +5,7 @@ import { IoIosCreate } from 'react-icons/io'
 import { Link } from 'react-router-dom';
 import { SidebarData } from './SideBarData';
 import './Navbar.css';
+import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons';
 import Wrapper from '../assets/wrappers/Navbar'
 import { useAppContext } from '../context/appContext'
@@ -37,24 +38,25 @@ function Navbar() {
           </button>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-          <ul className='nav-menu-items' onClick={showSidebar}>
+          <ul className='nav-menu-items' >
             <li className='navbar-toggle'>
               <Link to='#' className='menu-bars'>
-                <AiIcons.AiOutlineClose />
+                <AiIcons.AiOutlineClose onClick={showSidebar}/>
               </Link>
             </li>
             {SidebarData.map((item, index) => {
-              return (
+              return <SubMenu item={item} key={index} />;
+              //  (
 
-                <li key={index} className={item.cName}>
-                  <Link to={item.path}>
-                    {item.icon}
-                    {/* <SubMenu item={item} key={index} /> */}
-                    <span>{item.title}</span>
-                    {/* {item.subNav} */}
-                  </Link>
-                </li>
-              );
+              //   <li key={index} className={item.cName}>
+              //     <Link to={item.path}>
+              //       {item.icon}
+              //       {/* <SubMenu item={item} key={index} /> */}
+              //       <span>{item.title}</span>
+              //       {/* {item.subNav} */}
+              //     </Link>
+              //   </li>
+              // );
             })}
             {
               user.userType === 'Admin' && <li className='nav-text'>

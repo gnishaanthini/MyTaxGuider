@@ -47,7 +47,7 @@ function TaxAssessmentVat(props) {
 
     console.log(name, nic, registration, price, year, tin, type);
 
-    let path = '/vattaxreport';
+    let path = '/SelfTaxAssessment/vattaxreport';
     navigate(path);
    
     props.handleSubmit(name, nic, registration, price, year, tin, type);
