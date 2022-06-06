@@ -23,6 +23,13 @@ class User {
             [username, userType]
         )
     }
+
+    static findById(id) {
+        return db.query(
+            'SELECT * FROM Users WHERE id = ? LIMIT 1',
+            [id]
+        )
+    }
 }
 
 export default User

@@ -16,11 +16,10 @@ if (process.env.NODE_ENV !== 'Production') {
 
 // production
 
-// db
-// import db from './db/connect.js'
-
 // routes
 import authRouter from './routes/authRoute.js'
+import adminRouter from './routes/adminRoutes.js'
+import employeeRouter from './routes/employeeRoutes.js'
 
 // middlewares
 import notFoundMiddleware from './middleware/not-found.js'
@@ -32,6 +31,8 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/v1/auth', authRouter)
+app.use('/api/v1/admin', adminRouter)
+app.use('/api/v1/emp', employeeRouter)
 
 app.use(notFoundMiddleware)
 app.use(errorHandlerMiddeware)
@@ -40,8 +41,6 @@ app.use(errorHandlerMiddeware)
 const PORT = process.env.PORT || 5500
 const start = async () => {
     try {
-        // const result = await db.query('select * from test')
-        // console.table(result[0])
         app.listen(PORT, () => {
             console.log(`Server is listening on port ${PORT}...`);
         })

@@ -8,5 +8,11 @@ import SvatR from "./SvatR"
 import PayeR from "./PayeR"
 import IncomeR from "./IncometaxR"
 import EscR from "./EscR"
+import EconomicServiceCharge from './TaxGuidlines/EconomicServiceCharge/EconomicServiceCharge'
+import IncomeTax from './TaxGuidlines/IncomeTax/IncomeTax'
+import Paye from './TaxGuidlines/PAYE/PAYE'
+import SimpleValueAddedTax from './TaxGuidlines/SimplifiedValueAddedTax/SimplifiedValueAddedTax'
+import TouristVatRefund from './TaxGuidlines/TouristVatRefund/TouristVatRefund'
+import ValueAddedTax from './TaxGuidlines/ValueAddedTax/ValueAddedTax'
 
-export { Error, Landing, Register, ProtectedRoute , VatR, TvrsR, SvatR, PayeR, IncomeR, EscR}
+export { Error, Landing, Register, ProtectedRoute,VatR, TvrsR, SvatR, PayeR, IncomeR, EscR,EconomicServiceCharge,IncomeTax,Paye,SimpleValueAddedTax,TouristVatRefund,ValueAddedTax }
