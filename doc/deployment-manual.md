@@ -1,7 +1,4 @@
 # Deploy MyTaxGuider
-  
-![MyTaxGuider](/client/src/assets/images/main.svg)
-
 
 ## :bookmark_tabs: Table of Contents
 
