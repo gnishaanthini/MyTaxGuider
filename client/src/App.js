@@ -8,6 +8,8 @@ import TaxAssessmentVat from './pages/taxAssessmentVat.js';
 
 import IncomeTaxReport from './pages/incometaxReport';
 import VatTaxReport from './pages/vattaxReport';
+
+import FAQ from './pages/faq';
 import Home from './pages/home';
 
 
@@ -53,6 +55,12 @@ function App() {
           <Route path='/SelfTaxAssessment/taxAssessmentVat' element={<ProtectedRoute>< TaxAssessmentVat handleSubmit={addVatTax}/></ProtectedRoute>}></Route>
           <Route path='/SelfTaxAssessment/incometaxreport' element={<ProtectedRoute>< IncomeTaxReport data={incometax}/></ProtectedRoute>}></Route>
           <Route path='/SelfTaxAssessment/vattaxreport' element={<ProtectedRoute>< VatTaxReport data={vattax}/></ProtectedRoute>}></Route>
+          <Route path='/taxAssessmentIncome' element={<ProtectedRoute><TaxAssessmentIncome handleSubmit={addIncomeTax}/></ProtectedRoute>}></Route>
+          <Route path='/taxAssessmentVat' element={<ProtectedRoute>< TaxAssessmentVat handleSubmit={addVatTax}/></ProtectedRoute>}></Route>
+          <Route path='/incometaxreport' element={<ProtectedRoute>< IncomeTaxReport data={incometax}/></ProtectedRoute>}></Route>
+          <Route path='/vattaxreport' element={<ProtectedRoute>< VatTaxReport data={vattax}/></ProtectedRoute>}></Route>
+
+          <Route path='/faq' element={<ProtectedRoute><FAQ/></ProtectedRoute>}/>
           <Route path='/admin/login' element={<AdminLogin />}></Route>
           <Route path='/admin/create' element={<IsAdmin><CreateEmployee /></IsAdmin>}></Route>
 
@@ -70,6 +78,7 @@ function App() {
           <Route path='/rnr/IncomeR' element={<ProtectedRoute><IncomeR/></ProtectedRoute>}></Route>
           <Route path='/rnr/EscR' element={<ProtectedRoute><EscR/></ProtectedRoute>}></Route>
           <Route path="*" element={<Error />} />
+  
         </Routes>
       </BrowserRouter>
     </div>

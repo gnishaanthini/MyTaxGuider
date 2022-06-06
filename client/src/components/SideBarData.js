@@ -152,6 +152,17 @@ export const SidebarData = [
   },
 
 
+  {
+    title: 'FAQ',
+    path: '/faq',
+    icon: <IoIcons.IoIosPaper />,
+    cName: 'nav-text'
+  },
+  // {
+  //   title: 'Chat Forum',
+  //   path: '/chatforum',
+  //   icon: <IoIcons.IoIosPaper />,
+  //   cName: 'nav-text'
+  // },
   
-
 ];
