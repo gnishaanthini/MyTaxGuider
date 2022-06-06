@@ -8,6 +8,7 @@ function FAQ() {
     const [count, setCount] = useState(1)
     const { authFetch, user } = useAppContext()
     const [newQuestion, setNewQuestion] = useState("")
+    const [newAnswer, setNewAnswer] = useState("")
     const [faqs, setfaqs] = useState([]);
 
     
@@ -33,13 +34,25 @@ function FAQ() {
     const handleChange = (e) => {
         setNewQuestion(e.target.value)
     }
-    // const showReply = () => {
 
-    // }
+    const handleChangeAns = (e) => {
+        setNewAnswer(e.target.value)
+    }
+    const handleSubmit = text=> event=> {
+        event.preventDefault()
+        console.log(text)
+      }
     const onSubmit = async (e) => {
         e.preventDefault()
         await authFetch.post('/faq/question', {question :newQuestion, created_by: user.username})
         setNewQuestion("")
+        setCount(count+1)
+    }
+
+    const onSubmitAns = async (e, id) => {
+        e.preventDefault()
+        await authFetch.post('/faq/answer', {id, answer :newAnswer, answered_by: user.username})
+        setNewAnswer("")
         setCount(count+1)
     }
 
@@ -64,17 +77,29 @@ function FAQ() {
             <div className="faqs">
                 {faqs.map((faq, i) => (
                 //<FAQ faq={faq} index={i} toggleFAQ={toggleFAQ} />
-                    <div className='faq'>
+                    <div className='faq' key={faq.id}>
                     <div
-                    className={"faq " + (faq.open ? 'open' : '')}
+                    className={"faq " + (faq.open ? 'open' : 'open')}
                     key={i}
                     onClick={() => toggleFAQ(i)}>
                         <div className="faq-question">
                             {faq.question}
                         </div>
                         <div className="faq-answer">
-                            {faq.answer}
-                            {/* <button class='add-answer'>Reply</button> */}
+                        {faq.answer}
+                        {!faq.answer && 
+                            <form className='form' onSubmit={(e) => onSubmitAns(e, faq.id)}>
+                            <FormRow
+                            type='faq-answer'
+                            name='faq-answer'
+                            value={newAnswer}
+                            handleChange={handleChangeAns}
+                            />
+                            <button type='submit' className='btn btn-block' >submit</button>
+                        </form>
+                        }
+                            
+                            
                         </div>
                     </div>
                 </div>

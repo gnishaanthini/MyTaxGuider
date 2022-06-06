@@ -6,35 +6,10 @@ import bcrypt from 'bcryptjs'
 import Faq from "../models/Faq.js"
 
 const createQuestion = async (req, res, next) => {
-    // console.log(req.user.userId)
-
-    // if (!req.user.userId) {
-    //     throw new UnAuthenticatedError('you are not authorized')
-    // }
-
-    // const [employeeAlreadyExists, _ ] = await User.findById(req.user.userId)
-
-    // if (employeeAlreadyExists.length===0) {
-    //     throw new UnAuthenticatedError('you are not authorized')
-    // }
-
-    // const employee = employeeAlreadyExists[0]
-    // // console.log(admin);
-
-    // if (employee.userType==='Customer') {
-    //     throw new UnAuthenticatedError('you are not authorized')
-    // }
-
     const { question, created_by} = req.body
     if (!question || !created_by) {
         throw new BadRequestError('please provide all values')
     }
-
-    // const [userAlreadyExists, _t ] = await User.findOne(username, userType)
-
-    // if (userAlreadyExists.length>0) {
-    //     throw new BadRequestError(`username: ${username} already in use`)
-    // }
 
     const faq = new Faq(question, created_by)
     const [ result, __ ] = await faq.create()
@@ -47,7 +22,7 @@ const createQuestion = async (req, res, next) => {
 }
 
 const answerQuestion = async (req, res) => {
-    // const { username, password, userType } = req.body
+    const { id, answer, answered_by } = req.body
     // if (!username || !password) {
     //     throw new BadRequestError('please provide all values')
     // }
@@ -67,14 +42,15 @@ const answerQuestion = async (req, res) => {
     // const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_LIFETIME})
 
     // user.password = undefined
-    // res.status(StatusCodes.OK).json({ user, token })
+    Faq.answerQuection(id, answer, answered_by)
+    res.status(StatusCodes.OK).json({ answer: answer, answered_by: answered_by })
 }
 
 const getAllFaq = async (req, res, next) => {
     
     const [ result, __ ] = await Faq.getAllfaq()
     res.status(StatusCodes.OK).json({ faqs: result })
-    console.log(result)
+    //console.log(result)
 }
 
 export {

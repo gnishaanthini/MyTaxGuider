@@ -10,7 +10,6 @@ import IncomeTaxReport from './pages/incometaxReport';
 import VatTaxReport from './pages/vattaxReport';
 
 import FAQ from './pages/faq';
-import ChatForum from './pages/chatforum';
 import Home from './pages/home';
 
 function App() {
@@ -56,7 +55,6 @@ function App() {
           <Route path='/vattaxreport' element={<ProtectedRoute>< VatTaxReport data={vattax}/></ProtectedRoute>}></Route>
 
           <Route path='/faq' element={<ProtectedRoute><FAQ/></ProtectedRoute>}/>
-          <Route path='/chatforum' element={<ProtectedRoute><ChatForum/></ProtectedRoute>}/>
           <Route path='/admin/login' element={<AdminLogin />}></Route>
           <Route path='/admin/create' element={<IsAdmin><CreateEmployee /></IsAdmin>}></Route>
           <Route path="*" element={<Error />} />

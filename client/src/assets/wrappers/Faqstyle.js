@@ -23,7 +23,7 @@ const Wrapper = styled.section`{
 	transition: all 0.4s ease;
 }
 
-.faqs .faq .faq-question::after {
+.faqs .faq .faq-question::hover {
 	content: '';
 	position: absolute;
 	top: 50%;
@@ -51,7 +51,7 @@ const Wrapper = styled.section`{
 	margin-bottom: 15px;
 }
 
-.faqs .faq.open .faq-question::after {
+.faqs .faq.open .faq-question::hover {
 	transform: translateY(-50%) rotate(180deg);
 }
 
