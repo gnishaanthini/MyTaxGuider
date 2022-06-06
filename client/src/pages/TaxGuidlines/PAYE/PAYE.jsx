@@ -1,8 +1,10 @@
 import React from "react";
+import Navbar from "../../../components/Navbar"; 
 
 function Paye(){
     return(
         <>
+         <Navbar/>
         <div class="bg-info container-fluid p-5   border">
             <h1>Pay As You Earn</h1>
         </div>

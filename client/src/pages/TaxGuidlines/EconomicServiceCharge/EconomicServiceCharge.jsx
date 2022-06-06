@@ -1,8 +1,13 @@
 import React from "react";
+import { useState, setState } from 'react';
+import Navbar from "../../../components/Navbar"; 
+
 
 function EconomicServiceCharge(){
     return(
+        
         <div>
+            <Navbar />
             <div class=" bg-info container-fluid p-5 "><h1>Economic Service Charge</h1></div>
             <div class="bg-light container  mb-4"><div class=" container  mb-4">
                 <h4>Tax Liability</h4>

@@ -1,8 +1,10 @@
 import React from "react";
+import Navbar from "../../../components/Navbar"; 
 
 function IncomeTax(){
     return(
         <>
+             <Navbar/>
             <div class="bg-info container-fluid p-5   border" ><h1>Income tax</h1></div>
             <div class="bg-light container ">
             <div class="container-fluid p-5   border">

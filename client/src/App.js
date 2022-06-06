@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Error, Landing, Register, ProtectedRoute } from './pages/'
+import { Error, Landing, Register, ProtectedRoute,EconomicServiceCharge,IncomeTax,Paye,SimpleValueAddedTax,TouristVatRefund,ValueAddedTax } from './pages/'
 import { AdminLogin, CreateEmployee, IsAdmin } from './pages/admin/'
 import React, { useState, setState } from 'react';
 
@@ -9,6 +9,8 @@ import TaxAssessmentVat from './pages/taxAssessmentVat.js';
 import IncomeTaxReport from './pages/incometaxReport';
 import VatTaxReport from './pages/vattaxReport';
 import Home from './pages/home';
+
+
 
 function App() {
   const [incometax, setIncomeTax] = useState({});
@@ -53,6 +55,14 @@ function App() {
           <Route path='/vattaxreport' element={<ProtectedRoute>< VatTaxReport data={vattax}/></ProtectedRoute>}></Route>
           <Route path='/admin/login' element={<AdminLogin />}></Route>
           <Route path='/admin/create' element={<IsAdmin><CreateEmployee /></IsAdmin>}></Route>
+
+          <Route path ="/Guidlines/EconomicServiceCharge" element={<ProtectedRoute><EconomicServiceCharge/></ProtectedRoute>}></Route>
+          <Route path ="/Guidlines/IncomeTax" element={<ProtectedRoute><IncomeTax/></ProtectedRoute>}></Route>
+          <Route path ="/Guidlines/ValueAddedTax" element={<ProtectedRoute><ValueAddedTax/></ProtectedRoute>}></Route>
+          <Route path ="/Guidlines/TouristVatRefund" element={<ProtectedRoute><TouristVatRefund/></ProtectedRoute>}></Route>
+          <Route path ="/Guidlines/Paye" element={<ProtectedRoute><Paye/></ProtectedRoute>}></Route>
+          <Route path ="/Guidlines/SimpleValueAddedTax" element={<ProtectedRoute><SimpleValueAddedTax/></ProtectedRoute>}></Route>
+
           <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>
