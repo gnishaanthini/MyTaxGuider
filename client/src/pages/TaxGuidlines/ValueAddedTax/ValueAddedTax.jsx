@@ -1,9 +1,10 @@
 import React from "react";
+import Navbar from "../../../components/Navbar"; 
 
 function ValueAddedTax(){
     return(
         <div>
-            
+             <Navbar/>
             <div class="bg-info container-fluid p-5 ">
                 <h1>Value Added Tax</h1>
             </div>

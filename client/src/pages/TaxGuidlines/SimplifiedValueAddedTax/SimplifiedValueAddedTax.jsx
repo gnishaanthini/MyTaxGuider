@@ -1,8 +1,10 @@
 import React from "react";
+import Navbar from "../../../components/Navbar"; 
 
 function SimpleValueAddedTax(){
     return(
         <div>
+             <Navbar/>
             <div class="bg-info container-fluid p-5"><h1>Simple Value Added Tax</h1></div>
             <div class="bg-light container  mb-4 ">
             <div class=" container  mb-4 ">

@@ -1,9 +1,11 @@
 import React from "react";
+import Navbar from "../../../components/Navbar"; 
 
 function TouristVatRefund(){
     return(
 
         <div>
+             <Navbar/>
             <div class="bg-info container-fluid p-5 "><h1>Tourist VAT Refund Scheme</h1></div>
             <div class="bg-light container  mb-4 ">
             <div class="bg-light container  mb-4 ">
