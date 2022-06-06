@@ -3,6 +3,7 @@ import { FormRow, Logo, Alert } from '../../components'
 import { useAppContext } from '../../context/appContext'
 // import { useNavigate } from 'react-router-dom'
 import Wrapper from '../../assets/wrappers/RegisterPage'
+import Navbar from '../../components/Navbar';
 
 const initialState = {
     username: '',
@@ -56,6 +57,7 @@ const CreateEmployee = () => {
 
     return (
         <Wrapper className='full-page'>
+            <Navbar />
             <form className='form' onSubmit={onSubmit}>
                 <Logo className='logo' />
                 <h3>{values.userType}</h3>

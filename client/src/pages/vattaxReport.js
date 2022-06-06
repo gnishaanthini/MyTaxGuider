@@ -1,6 +1,4 @@
 import React, { useState, setState } from 'react';
-import Table from 'react-bootstrap/Table';
-// import Form from 'react-bootstrap/Form';
 import { Form, Button, InputGroup, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import Wrapper from '../assets/wrappers/Formstyle'
 import Navbar from '../components/Navbar';
@@ -44,7 +42,7 @@ function VatTaxReport(props) {
             }}>VAT Tax Report</h1>
             <br></br>
             <br></br>
-            <Wrapper className='form'><Form style={{width:'250%'}}>
+            <Wrapper className='form'><Form style={{width:'100%'}}>
                 <InputGroup className="mb-3">
                     <InputGroup.Text id="inputGroup-sizing-default">Name</InputGroup.Text><span></span>
                     <FormControl type="text" id="name" value={arr.name}

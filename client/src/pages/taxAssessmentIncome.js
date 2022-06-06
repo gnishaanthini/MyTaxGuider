@@ -3,9 +3,8 @@ import Form from 'react-bootstrap/Form';
 
 import Button from 'react-bootstrap/Button';
 import Navbar from '../components/Navbar';
-import generatePDF from "./reportGenerator";
-// import { PDFDownloadLink } from "@react-pdf/renderer";
-// import { PdfDocument } from "./Tax";
+
+
 import { useNavigate } from "react-router-dom";
 import Wrapper from '../assets/wrappers/Formstyle'
 
@@ -62,22 +61,13 @@ function TaxAssessmentIncome(props) {
 
     }
 
-    // setTax([{
-    //   name:name,
-    //   nic:nic,
-    //   source:source,
-    //   paysheet:paysheet,
-    //   income:income,
-    //   year:year,
-    //   tin:tin
-    // }])
 
 
   }
 
   function handleSubmit(event) {
 
-    console.log(name, nic, source, paysheet, income, year, tin);
+    //console.log(name, nic, source, paysheet, income, year, tin);
 
     setTax({
       name: name,
@@ -89,17 +79,9 @@ function TaxAssessmentIncome(props) {
       tin: tin
     })
 
-    let path = '/incometaxreport';
+    let path = '/SelfTaxAssessment/incometaxreport';
     navigate(path);
-    // <Router>
-    //   <Routes>
-    //   <Route path='/taxreport' element={< TaxReport data={tax}/>}></Route>
-    //   </Routes>
-    // </Router>
 
-
-
-    // alert(`The name you entered was: ${tax.name}`);
     props.handleSubmit(name, nic, source, paysheet, income, year, tin);
     event.preventDefault();
   }
@@ -116,12 +98,7 @@ function TaxAssessmentIncome(props) {
       <br></br>
       <Wrapper className="form">
         <Form>
-          {/* <h4 style={{
-            textAlign: "center",
-            marginLeft: "200px",
-            color: "green"
-          }}>Tax Assessment for Income Tax</h4> */}
-
+         
 
           <br></br>
           <Form.Group>
@@ -186,27 +163,7 @@ function TaxAssessmentIncome(props) {
           </Button>
 
         </Form>
-        {/* <button
-              className="btn btn-primary"
-              onClick={() => generatePDF(tax)}
-            >
-              Generate monthly report
-            </button> */}
-        {/* {show &&<PDFDownloadLink
-        document={<PdfDocument data={tax} />}
-        fileName="movielist.pdf"
-        style={{
-          textDecoration: "none",
-          padding: "10px",
-          color: "#4a4a4a",
-          backgroundColor: "#f2f2f2",
-          border: "1px solid #4a4a4a"
-        }}
-      >
-        {({ blob, url, loading, error }) =>
-          loading ? "Loading document..." : "Download Pdf"
-        }
-      </PDFDownloadLink>}   */}
+        
 
       </Wrapper>
     </div>

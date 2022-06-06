@@ -4,9 +4,6 @@ import { useAppContext } from '../context/appContext';
 import image from "../assets/images/home.png";
 
 
-
-
-
 function Home() {
 
     const {

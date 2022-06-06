@@ -45,11 +45,11 @@ function TaxAssessmentVat(props) {
 
   function handleSubmit(event) {
 
-    console.log(name, nic, registration, price, year, tin, type);
+    //console.log(name, nic, registration, price, year, tin, type);
 
-    let path = '/vattaxreport';
+    let path = '/SelfTaxAssessment/vattaxreport';
     navigate(path);
-    // alert(`The name you entered was: ${name}`);
+   
     props.handleSubmit(name, nic, registration, price, year, tin, type);
     event.preventDefault();
   }
@@ -67,11 +67,7 @@ function TaxAssessmentVat(props) {
 
       <Wrapper className="form">
         <Form>
-          {/* <h4 style={{
-            textAlign: "center",
-            marginLeft: "200px",
-            color: "green"
-          }}>Tax Assessment for Income Tax</h4> */}
+         
 
 
           <br></br>

@@ -51,7 +51,7 @@ const AppProvider = ({children}) => {
     }, (error) => {
         // console.log(error.response)
         if (error.response.status === 401) {
-            // logoutUser()
+            logoutUser()
         }
         return Promise.reject(error)
     })
@@ -187,7 +187,8 @@ const AppProvider = ({children}) => {
             loginUser,
             logoutUser,
             registerAdmin,
-            registerEmployee
+            registerEmployee,
+            authFetch
         }}>
         {children}
     </AppContext.Provider>
