@@ -7,8 +7,8 @@ CREATE TABLE Users (
 
 CREATE TABLE faq (
     id int AUTO_INCREMENT PRIMARY KEY,
-    question varchar(100) NOT null,
-    answer varchar(100),
+    question TEXT NOT null,
+    answer TEXT,
     created_by varchar(20) NOT null,
     answered_by varchar(20)
 );
